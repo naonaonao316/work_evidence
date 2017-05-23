@@ -2,51 +2,121 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <style type="text/css">
+    table {
+      /*table-layout: fixed;*/
+      position: absolute;
+      left: 400px;
+      border: 0;
+    }
     th, td {
       border-bottom: 1px solid #ddd;
-     }
-     .column1 {
-       background-color: red;
-     }
-     .column1:hover {
-       height: 100px;
-     }
-     .column2 {
-       background-color: blue;
-     }
-     .column3 {
-       background-color: green;
-     }
+      width: 25px;
+      height: 30px;
+      position: absolute;
+    }
+    .header1 {
+      background-color: aquamarine;
+      width: 79px;
+    }
+    .header2 {
+      background-color: blueviolet;
+      left: 83px;
+      width: 79px;
+    }
+    .column1 {
+    }
+    .column2 {
+      left: 27px;
+    }
+    .column3 {
+      left: 54px;
+    }
+    .column4 {
+      left: 81px;
+    }
+    .column5 {
+      left: 108px;
+    }
+    .column6 {
+      left: 135px;
+    }
+    #row2 {
+      position: absolute;
+      top: 33px;
+    }
+    #row3 {
+      position: absolute;
+      top: 66px;
+    }
+    #row4 {
+      position: absolute;
+      top: 99px;
+    }
+    #row5 {
+      position: absolute;
+      top: 132px;
+    }
+    @keyframes move1 {
+      from {height: 0px;}
+      to {height: 31px;}
+    }
+    @keyframes move2 {
+      from {height: 0px;}
+      to {height: 65px;}
+    }
+    @keyframes move3 {
+      from {height: 0px;}
+      to {height: 98px;}
+    }
     </style>
   </head>
   <body>
     <header>
     </header>
-    <table class="target_table">
-      <tr id="header">
-        <th colspan="2">C23</th>
-      </tr>
-      <tr id="row1">
-        <td class="column1" style="height: 50px; transition: height 2s;"><span class="content">1-1</span></td>
-        <td class="column2" rowspan="3"><span class="column2 content">1-2</span></td>
-        <td class="column3" rowspan="1"><span class="column3a content">1-3</span></td>
-      </tr>
-      <tr id="row2">
-        <td class="column1">2-1</td>
-        <td class="column2">2-2</td>
-      </tr>
-      <tr id="row3">
-        <td class="column1">3-1</td>
-        <td class="column2">3-2</td>
-        <td class="column3">3-3</td>
-      </tr>
-      <tr id="row4">
-        <td class="column1">4-1</td>
-        <td class="column2">4-2</td>
-        <td class="column3">4-3</td>
-      </tr>
-    </table>
+    <center>
+      <table class="target_table">
+        <tr id="row1">
+          <td class="header1">RoomA</th>
+          <td class="header2">RoomB</th>
+        </tr>
+        <tr id="row2">
+          <td class="column1"><div class="class1 class2 class3" style="background-color: blue; animation: move2 1s; animation-fill-mode: forwards;">1-1</div></td>
+          <td class="column2"><div class="class1 class2 class3" style="background-color: pink; animation: move3 1s; animation-fill-mode: forwards;">1-2</div></td>
+          <td class="column3"><div class="class1 class2 class3" style="background-color: darkturquoise; animation: move1 1s; animation-fill-mode: forwards;">1-3</div></td>
+          <td class="column4"><div class="class1 class2 class3">1-4</div></td>
+          <td class="column5"><div class="class1 class2 class3">1-5</div></td>
+          <td class="column6"><div class="class1 class2 class3">1-6</div></td>
+        </tr>
+        <tr id="row3">
+          <td class="column1"><div class="class1 class2 class3">2-1</div></td>
+          <td class="column2"><div class="class1 class2 class3">2-2</div></td>
+          <td class="column3"><div class="class1 class2 class3">2-3</div></td>
+          <td class="column4"><div class="class1 class2 class3">2-4</div></td>
+          <td class="column5"><div class="class1 class2 class3">2-5</div></td>
+          <td class="column6"><div class="class1 class2 class3">2-6</div></td>
+        </tr>
+        <tr id="row4">
+          <td class="column1"><div class="class1 class2 class3">3-1</div></td>
+          <td class="column2"><div class="class1 class2 class3">3-2</div></td>
+          <td class="column3"><div class="class1 class2 class3">3-3</div></td>
+          <td class="column4"><div class="class1 class2 class3">3-4</div></td>
+          <td class="column5"><div class="class1 class2 class3">3-5</div></td>
+          <td class="column6"><div class="class1 class2 class3">3-6</div></td>
+        </tr>
+        <tr id="row5">
+          <td class="column1"><div class="class1 class2 class3">4-1</div></td>
+          <td class="column2"><div class="class1 class2 class3">4-2</div></td>
+          <td class="column3"><div class="class1 class2 class3">4-3</div></td>
+          <td class="column4"><div class="class1 class2 class3">4-4</div></td>
+          <td class="column5"><div class="class1 class2 class3">4-5</div></td>
+          <td class="column6"><div class="class1 class2 class3">4-6</div></td>
+        </tr>
+      </table>
+    </center>
+    <br>
+    <div class="test"></div>
     <footer>
     </footer>
   </body>
