@@ -79,8 +79,9 @@
     </style>
   </head>
   <body>
-  <?php require_once("lib/idiorm.php") ?>
+  <?php /*require_once("lib/idiorm.php") */?>
   <?php
+    /*
     ORM::configure('mysql:host=localhost;dbname=test_database');
     ORM::configure('username', 'root');
     ORM::configure('password', 'jiji4649');
@@ -99,6 +100,7 @@
       echo "width: $width";
       echo "<br>";
     }
+    */
   ?>
     <header>
     </header>
