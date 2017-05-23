@@ -42,6 +42,12 @@
     .column6 {
       left: 135px;
     }
+    .column7 {
+      left: 162px;
+    }
+    .column8 {
+      left: 189px;
+    }
     #row2 {
       position: absolute;
       top: 33px;
@@ -73,6 +79,27 @@
     </style>
   </head>
   <body>
+  <?php require_once("lib/idiorm.php") ?>
+  <?php
+    ORM::configure('mysql:host=localhost;dbname=test_database');
+    ORM::configure('username', 'root');
+    ORM::configure('password', 'jiji4649');
+
+    $base_width = 25;
+    $rooms = ORM::for_table('rooms')->find_many();
+    foreach ($rooms as $room) {
+      echo $room->name;
+      echo "<br>";
+      $event_counts = ORM::for_table('events')
+                      ->where('room_id', $room->id)
+                      ->count();
+      echo $event_counts;
+      echo "<br>";
+      $width = ($base_width * $event_counts) + (2 * $event_counts);
+      echo "width: $width";
+      echo "<br>";
+    }
+  ?>
     <header>
     </header>
     <center>
@@ -86,21 +113,21 @@
           <td class="column2"><div class="class1 class2 class3" style="background-color: pink; animation: move3 1s; animation-fill-mode: forwards;">1-2</div></td>
           <td class="column3"><div class="class1 class2 class3" style="background-color: darkturquoise; animation: move1 1s; animation-fill-mode: forwards;">1-3</div></td>
           <td class="column4"><div class="class1 class2 class3">1-4</div></td>
-          <td class="column5"><div class="class1 class2 class3">1-5</div></td>
-          <td class="column6"><div class="class1 class2 class3">1-6</div></td>
+          <td class="column5"><div class="class1 class2 class3" style="background-color: blue; animation: move2 1s; animation-fill-mode: forwards;">1-5</div></td>
+          <td class="column6"><div class="class1 class2 class3" style="background-color: darkturquoise; animation: move1 1s; animation-fill-mode: forwards;">1-6</div></td>
         </tr>
         <tr id="row3">
           <td class="column1"><div class="class1 class2 class3">2-1</div></td>
           <td class="column2"><div class="class1 class2 class3">2-2</div></td>
           <td class="column3"><div class="class1 class2 class3">2-3</div></td>
-          <td class="column4"><div class="class1 class2 class3">2-4</div></td>
+          <td class="column4"><div class="class1 class2 class3" style="background-color: pink; animation: move3 1s; animation-fill-mode: forwards;">2-4</div></td>
           <td class="column5"><div class="class1 class2 class3">2-5</div></td>
           <td class="column6"><div class="class1 class2 class3">2-6</div></td>
         </tr>
         <tr id="row4">
           <td class="column1"><div class="class1 class2 class3">3-1</div></td>
           <td class="column2"><div class="class1 class2 class3">3-2</div></td>
-          <td class="column3"><div class="class1 class2 class3">3-3</div></td>
+          <td class="column3"><div class="class1 class2 class3" style="background-color: blue; animation: move2 1s; animation-fill-mode: forwards;">3-3</div></td>
           <td class="column4"><div class="class1 class2 class3">3-4</div></td>
           <td class="column5"><div class="class1 class2 class3">3-5</div></td>
           <td class="column6"><div class="class1 class2 class3">3-6</div></td>
@@ -112,6 +139,8 @@
           <td class="column4"><div class="class1 class2 class3">4-4</div></td>
           <td class="column5"><div class="class1 class2 class3">4-5</div></td>
           <td class="column6"><div class="class1 class2 class3">4-6</div></td>
+          <td class="column7"><div class="class1 class2 class3">4-7</div></td>
+          <td class="column8"><div class="class1 class2 class3">4-8</div></td>
         </tr>
       </table>
     </center>
