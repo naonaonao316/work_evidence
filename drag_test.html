@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery.funcResizeBox.js"></script>
+  <script src="js/splitter.js"></script>
+  <script src="js/jquery.exresize.0.1.0.js"></script>
+  <script src="js/jquery.exresize-latest.js"></script>
+
+  <title>img resize</title>
+</head>
+<body>
+
+<div id="resize1" class="sample1" style="width: 100px; height: 100px; background-color: black;"></div>
+<br>
+<div id="resize2" class="sample2" style="width: 100px; height: 100px; background-color: green;"></div>
+<br>
+<div id="resize3" class="sample3" style="width: 100px; height: 100px; background-color: red;"></div>
+<br>
+<div id="resize4" class="sample4" style="width: 100px; height: 100px; background-color: blue;"></div>
+
+<script>
+
+$(".sample1, .sample2, .sample3, .sample4").funcResizeBox({
+  minHeight:30,
+  maxHeight:300
+});
+
+/*
+$(function(){
+  alert("hello");
+
+  $(".sample").on("mousemove", function(){
+    alert("you are on this element");
+    var $box = $(this);
+
+    var right_flg = false;
+    var bottom_flg = false;
+
+
+  });
+});
+*/
+</script>
+</body>
+</html>

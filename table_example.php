@@ -3,6 +3,13 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.funcResizeBox.js"></script>
+    <script src="js/splitter.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+      });
+    </script>
     <style type="text/css">
     table {
       /*table-layout: fixed;*/
@@ -107,21 +114,21 @@
   </head>
   <body>
     <center>
-      <div class="outside" style="position: absolute; left: 400px; width: 100px; height: 150px; overflow: scroll;">
+      <div class="outside" style="position: absolute;">
         <table class="target_table">
           <tr id="row1">
             <td class="header1">RoomA</th>
             <td class="header2">RoomB</th>
           </tr>
           <tr id="row2">
-            <td class="column1"><div class="class1 class2 class3" style="background-color: blue; animation: move2 1s; animation-fill-mode: forwards;">1-1</div></td>
+            <td class="column1"><div class="class1 class2 class3 draggable" style="background-color: blue; animation: move2 1s; animation-fill-mode: forwards;">1-1</div></td>
             <td class="column2"><div class="class1 class2 class3" style="background-color: pink; animation: move3 1s; animation-fill-mode: forwards;">1-2</div></td>
             <td class="column3"><div class="class1 class2 class3" style="background-color: darkturquoise; animation: move1 1s; animation-fill-mode: forwards;">1-3</div></td>
             <td class="column4"><div class="class1 class2 class3">1-4</div></td>
             <td class="column5"><div class="class1 class2 class3" style="background-color: blue; animation: move2 1s; animation-fill-mode: forwards;">1-5</div></td>
             <td class="column6"><div class="class1 class2 class3" style="background-color: darkturquoise; animation: move1 1s; animation-fill-mode: forwards;">1-6</div></td>
             <td class="column7"><div class="class1 class2 class3" style="background-color: darkturquoise; animation: move1 1s; animation-fill-mode: forwards;">1-7</div></td>
-            <td class="column8"><div class="class1 class2 class3" style="background-color: darkturquoise; animation: move1 1s; animation-fill-mode: forwards;">1-8</div></td>
+            <td class="column8"><div class="class1 class2 class3 draggable" style="background-color: darkturquoise; animation: move1 1s; animation-fill-mode: forwards;">1-8</div></td>
           </tr>
           <tr id="row3">
             <td class="column1"><div class="class1 class2 class3">2-1</div></td>
@@ -227,7 +234,18 @@
       </div>
     </center>
     <br>
+    <div class="sample1" style="height: 100px; width: 100px: background-color: blue;"></div>
     <footer>
     </footer>
+    <script>
+      $(function(){
+        $(".draggable").draggable();
+      });
+    </script>
+    <script>
+    $(document).ready(function(){
+      $('.draggable').funcResizeBox({});
+    });
+    </script>
   </body>
 </html>
