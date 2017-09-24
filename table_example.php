@@ -114,6 +114,7 @@
   </head>
   <body>
     <center>
+      <button class="target_button">Click!!</button>
       <div class="outside" style="position: absolute;">
         <table class="target_table">
           <tr id="row1">
