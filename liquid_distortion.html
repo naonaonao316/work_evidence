@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.slide-wrapper {
+  display: none;
+}
+
+.scene-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: inline-block;
+}
+
+.scene-nav--next {
+  right: 2%;
+}
+
+.scene-nav--prev {
+  left: 2%;
+}
+
+</style>
+</head>
+<body>
+<div class="slide-wrapper">
+  <div class="slide-item">
+    <h3 class="slide-item_title">Slide 1</h3>
+    <img src="..." class="slide-item_image">
+  </div>
+  <div class="slide-item">
+    <h3 class="slide-item_title">Slide 2</h3>
+    <img src="..." class="slide-item_image">
+  </div>
+  <div class="slide-item">
+    <h3 class="slide-item_title">Slide 3</h3>
+    <img src="..." class="slide-item_image">
+  </div>
+</div>
+
+<a href="#" class="scene-nav scene-nav--prev" data-nav="previous">PREV</a>
+<a href="#" class="scene-nav scene-nav--next" data-nav="next">NEXT</a>
+</body>
+</html>
